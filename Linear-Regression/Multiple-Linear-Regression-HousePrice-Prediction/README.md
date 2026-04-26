@@ -73,13 +73,16 @@ Where:
 
 ---
 
+
+
 ### 🔍 Model Training
 
-The model finds optimal weights by minimizing error:
+The model learns optimal weights by minimizing prediction error using the Mean Squared Error (MSE) function:
 
-> **MSE = (1/n) Σ (Y_actual − Y_predicted)²**
+> **MSE = (1 / n) Σ (Y_actual − Y_predicted)²**
 
-👉 Goal: Minimize difference between actual and predicted price
+👉 **Goal:** Minimize the difference between actual and predicted house prices
+
 
 ---
 
