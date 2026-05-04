@@ -90,6 +90,7 @@ After training, the model predicts output using the learned equation.
 
 ## 🎯 Key Takeaway
 
+> It is a relationship between the Independent variable & Dependent variable. If the Independent variable increases, then automatically the Dependent variable also increases.
 > Linear Regression helps understand and predict relationships between variables using a straight-line approach.
 
 ---
