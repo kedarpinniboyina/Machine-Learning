@@ -1,12 +1,13 @@
 # 📘 Logistic Regression
 
-This repository demonstrates the concept of Logistic Regression in Machine Learning, including different types of classification problems and prediction techniques.
+This repository demonstrates the concept of Logistic Regression in Machine Learning, including Binary, Multinomial, and Ordinal Logistic Regression.
 
 ---
 
 # 🔍 What is Logistic Regression?
 
-Logistic Regression is a supervised machine learning algorithm used for classification problems.  
+Logistic Regression is a supervised machine learning algorithm used for classification problems.
+
 It predicts categorical outputs such as:
 
 - Yes / No
@@ -14,133 +15,112 @@ It predicts categorical outputs such as:
 - Spam / Not Spam
 - Pass / Fail
 
-Unlike Linear Regression, Logistic Regression predicts probabilities between 0 and 1 using the Sigmoid Function.
+---
+
+# 📂 Types of Logistic Regression
+
+## 🔹 1. Binary Logistic Regression
+
+Binary means only **two output classes**.
+
+### Examples:
+- Spam / Not Spam
+- Pass / Fail
+- Yes / No
+
+### Formula
+
+```text
+P(Y=1) = 1 / (1 + e^-z)
+```
+
+```text
+z = b0 + b1X
+```
+
+### Meaning
+
+- P(Y=1) → Probability of output
+- X → Input Feature
+- b0 → Intercept
+- b1 → Coefficient
+
+### Working
+
+If probability > 0.5 → Output = 1  
+If probability < 0.5 → Output = 0
 
 ---
 
-# 📂 Project Structure
+## 🔹 2. Multinomial Logistic Regression
 
-## 🔹 Binary Logistic Regression
+Multinomial means **more than two output classes**.
 
-Used when there are only two output classes.
+### Examples:
+- Cat / Dog / Cow
+- Red / Blue / Green
+- Car / Bike / Bus
 
-### Example:
-Email Spam Detection
+### Formula
 
-- Spam → 1
-- Not Spam → 0
+```text
+P(Y=i) = e^zi / Σ e^zj
+```
 
-📌 Formula
+### Meaning
 
-\[
-P(Y=1)=\frac{1}{1+e^{-z}}
-\]
+- Used when multiple categories are present
+- Model predicts the probability for each class
+- Highest probability becomes the final output
 
-Where:
+### Example
 
-\[
-z = b_0 + b_1X
-\]
+```text
+Cat  → 0.20
+Dog  → 0.70
+Cow  → 0.10
+```
 
-- \(P(Y=1)\) → Probability of output
-- \(X\) → Input feature
-- \(b_0\) → Intercept
-- \(b_1\) → Coefficient
-
----
-
-## 🔹 Multinomial Logistic Regression
-
-Used when there are more than two output classes.
-
-### Example:
-- Cat
-- Dog
-- Cow
+Final Prediction → Dog
 
 ---
 
-## 🔹 Ordinal Logistic Regression
+## 🔹 3. Ordinal Logistic Regression
 
-Used when output categories have an order.
+Ordinal means output classes have an **order or ranking**.
 
-### Example:
-- Low
-- Medium
-- High
+### Examples:
+- Low / Medium / High
+- Poor / Average / Good
+- 1 Star / 2 Star / 3 Star
 
----
+### Important Point
 
-# ⚙️ How it Works
+Order is important here.
 
-## 📊 Model Learning
+```text
+Low < Medium < High
+```
 
-The model learns patterns from the dataset and calculates probabilities using the Sigmoid Function.
+### Formula
 
-### Sigmoid Function
+```text
+log(p / (1-p)) = b0 + b1X
+```
 
-\[
-\sigma(z)=\frac{1}{1+e^{-z}}
-\]
+### Working
 
-This converts values into probabilities between 0 and 1.
-
----
-
-## 📈 Prediction
-
-If probability > 0.5 → Class = 1  
-Else → Class = 0
-
-Example:
-
-- 0.85 → Spam
-- 0.12 → Not Spam
-
----
-
-# 🛠 Tech Stack
-
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- Matplotlib
-- Google Colab
-
----
-
-# ▶️ How to Use
-
-1. Open the notebook or project folder  
-2. Run the dataset preprocessing steps  
-3. Train the Logistic Regression model  
-4. Observe predictions and accuracy results  
-
----
-
-# 📊 Evaluation Metrics
-
-- Accuracy Score
-- Precision
-- Recall
-- F1 Score
-- Confusion Matrix
-
----
-
-# 🚀 Future Enhancements
-
-- Advanced Classification Models
-- Real-Time Prediction System
-- Streamlit / Gradio UI
-- Deployment using Hugging Face
+The model predicts categories based on ranking or order.
 
 ---
 
 # 🎯 Key Takeaway
 
-Logistic Regression helps classify data into categories by estimating probabilities using the Sigmoid Function. It is widely used in real-world applications such as spam detection, fraud detection, disease prediction, and customer behavior analysis.
+- Binary → Two classes
+- Multinomial → Multiple classes
+- Ordinal → Ordered classes
+
+Logistic Regression helps classify data into categories by predicting probabilities using mathematical formulas.
 
 ---
 
